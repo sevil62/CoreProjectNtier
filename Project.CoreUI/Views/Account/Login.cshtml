@@ -1,0 +1,23 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h1>Login</h1>
+<form asp-controller="Account"asp-action="Login" method="post">
+    <div>
+        <input type="text"asp-for="UserName"placeholder="UserName"/>
+    </div>
+    <div>
+        <input type="text"asp-for="Passsword" placeholder="Password"/>
+
+    </div>
+    <div>
+        <input asp-for="RememberMe" placeholder="RememberMe ?" />
+    </div>
+    <div>
+        <button class="btn btn-warning">
+            Login
+        </button>
+    </div>
+</form>

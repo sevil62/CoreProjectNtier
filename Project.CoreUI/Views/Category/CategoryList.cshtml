@@ -1,0 +1,42 @@
+﻿
+@model CategoryPageVM
+@{
+    ViewData["Title"] = "CategoryList";
+}
+@if (Model.Categories.Count == 0)
+{
+    <div class="jumbotron">
+        Henüz hiç bir kategori eklenmemiştir..Kategori eklemek için <a asp-action="AddCategory" asp-controller="Category">tıklayınız</a>
+    </div>
+}
+else
+{
+
+
+    <div class="row">
+        <div class="panel panel-primary">
+            <table class=" table table-hover">
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Description</th>
+                        <th>Islemler</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Category item in Model.Categories)
+                    {
+                        <tr>
+                            <td>@item.CategoryName</td>
+                            <td>@item.Description</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+
+
